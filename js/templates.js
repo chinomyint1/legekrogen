@@ -1,5 +1,15 @@
 export const templates = () => {
 
+
+ const insertTemplate = (selector, templateFunction) => {
+const htmlContainer = document.querySelector(selector)
+ 
+ if(!htmlContainer) return;
+
+        htmlContainer.insertAdjacentHTML('beforeend', templateFunction())
+
+}
+
     const navTemplate = () => {
         return`
          <div>Navbar</div>
@@ -7,11 +17,9 @@ export const templates = () => {
         `
     }
 
+insertTemplate('.nav-container', navTemplate)
 
-    const navContent = document.getElementById('.nav-content')
-
-    if(navContent) return;
-    navContent.insertAdjacentHTML('beforeend', navTemplate())
+   
  
 
      const headerTemplate = () => {
@@ -20,10 +28,6 @@ export const templates = () => {
         `
     }
 
-    const headerContainer = document.querySelector('.header-container')
-
-    if(!headerContainer) return;
-
-    headerContainer.insertAdjacentHTML('beforeend', headerTemplate())
+     insertTemplate('.header-container', headerTemplate)
 }
 
