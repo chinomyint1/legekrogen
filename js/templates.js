@@ -31,3 +31,9 @@ insertTemplate('.nav-container', navTemplate)
      insertTemplate('.header-container', headerTemplate)
 }
 
+const productlistTemplate = (product) => {
+    return `
+        <div>
+            ${product.title} ${product.price}
+        </div>
+}
