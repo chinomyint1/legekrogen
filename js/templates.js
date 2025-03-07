@@ -1,11 +1,8 @@
-const templates = () => {
+export const templates = () => {
 
     const navTemplate = () => {
-        return
-        `
-         
-        <div>Navbar</div>
-        
+        return`
+         <div>Navbar</div>
         
         `
     }
@@ -16,6 +13,17 @@ const templates = () => {
     if(navContent) return;
     navContent.insertAdjacentHTML('beforeend', navTemplate())
  
+
+     const headerTemplate = () => {
+        return `
+            <div>Header</div>
+        `
+    }
+
+    const headerContainer = document.querySelector('.header-container')
+
+    if(!headerContainer) return;
+
+    headerContainer.insertAdjacentHTML('beforeend', headerTemplate())
 }
 
-export default templates
